@@ -8,7 +8,7 @@ import static com.devpragmatic.introme.action.get.ClassWithActionAsDifferentName
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-class EmptyActionDescriptionTest {
+class ActionDiscovererTest {
     private static final String FIRST_METHOD_NAME = "doAction";
     private static final String SECOND_METHOD_NAME = "doAction2";
     private ActionDiscovererBasic actionDiscovererBasic = new ActionDiscovererBasic();

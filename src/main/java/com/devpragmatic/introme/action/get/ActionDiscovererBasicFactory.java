@@ -1,6 +1,6 @@
 package com.devpragmatic.introme.action.get;
 
-public class ActionDiscoveryBasicFactory implements ActionDiscovererFactory {
+public class ActionDiscovererBasicFactory implements ActionDiscovererFactory {
 
 
     @Override
