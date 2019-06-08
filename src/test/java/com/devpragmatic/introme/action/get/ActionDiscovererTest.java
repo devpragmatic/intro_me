@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class ActionDiscovererTest {
     private static final String FIRST_METHOD_NAME = "doAction";
     private static final String SECOND_METHOD_NAME = "doAction2";
-    private ActionDiscovererBasic actionDiscovererBasic = new ActionDiscovererBasic();
+    private static final ActionDiscovererBasic actionDiscovererBasic = new ActionDiscovererBasic();
 
     @Test
     void shouldReturnActionName(){
@@ -47,5 +47,14 @@ class ActionDiscovererTest {
         ActionDescription action = actions.get(DIFFERENT_ACTION_NAME);
         assertNotNull(action);
         assertEquals(DIFFERENT_ACTION_NAME, action.getName());
+    }
+
+    @Test
+    void shouldReturnStaticMethod(){
+        Actions actions = actionDiscovererBasic.getForClass(ClassWithStaticAction.class);
+        assertEquals(1, actions.size());
+        ActionDescription action = actions.get(FIRST_METHOD_NAME);
+        assertNotNull(action);
+        assertEquals(FIRST_METHOD_NAME, action.getName());
     }
 }
